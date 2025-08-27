@@ -11,7 +11,7 @@ export default function middleware(request: NextRequest) {
 
   const allowedOrigins =
     process.env.NODE_ENV === "production"
-      ? ["https://hire-chat-front.vercel.app"]
+      ? [`${process.env.FRONTEND_ORIGIN}`]
       : ["http://localhost:3000", "http://localhost:5173"];
 
   const isAllowedOrigin = origin && allowedOrigins.includes(origin);
